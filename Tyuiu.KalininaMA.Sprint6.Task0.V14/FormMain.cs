@@ -4,6 +4,8 @@ namespace Tyuiu.KalininaMA.Sprint6.Task0.V14
 {
     public partial class FormMain : Form
     {
+        private object textBoxIntX_KMA;
+
         public FormMain()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace Tyuiu.KalininaMA.Sprint6.Task0.V14
 
             try
             {
-                textBoxResult_KMA.Text = Convert.ToString(ds.Calculate(Convert.ToInt32(textBoxIntX_KMA.Text)));
+                textBoxResult_KMA.Text = Convert.ToString(ds.Calculate(x: Convert.ToInt32(textBoxIntX_KMA)));
             }
 
 
@@ -50,6 +52,16 @@ namespace Tyuiu.KalininaMA.Sprint6.Task0.V14
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonQuestion_KMA_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Таск 0 выполнила студентка группы РППб-25-1 Бородулин Матвей Сергеевич", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void groupBoxResult_KMA_Enter(object sender, EventArgs e)
         {
 
         }

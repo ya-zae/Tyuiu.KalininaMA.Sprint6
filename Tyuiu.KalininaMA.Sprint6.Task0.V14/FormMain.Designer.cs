@@ -35,16 +35,13 @@ namespace Tyuiu.KalininaMA.Sprint6.Task0.V14
             groupBox1 = new GroupBox();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            groupBox2 = new GroupBox();
-            textBoxIntX_KMA = new TextBox();
-            groupBox3 = new GroupBox();
+            groupBoxResult_KMA = new GroupBox();
             textBoxResult_KMA = new TextBox();
             ButtomDown_KMA = new Button();
             buttonQuestion_KMA = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
+            groupBoxResult_KMA.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -77,42 +74,25 @@ namespace Tyuiu.KalininaMA.Sprint6.Task0.V14
             label1.Text = "Выполнить выражение по формуле";
             label1.Click += label1_Click;
             // 
-            // groupBox2
+            // groupBoxResult_KMA
             // 
-            groupBox2.Controls.Add(textBoxIntX_KMA);
-            groupBox2.Location = new Point(28, 241);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(350, 115);
-            groupBox2.TabIndex = 3;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Ввод данных";
-            groupBox2.Enter += groupBox2_Enter;
-            // 
-            // textBoxIntX_KMA
-            // 
-            textBoxIntX_KMA.Location = new Point(15, 77);
-            textBoxIntX_KMA.Name = "textBoxIntX_KMA";
-            textBoxIntX_KMA.Size = new Size(100, 23);
-            textBoxIntX_KMA.TabIndex = 0;
-            textBoxIntX_KMA.TextChanged += textBoxIntX_KMA_TextChanged;
-            // 
-            // groupBox3
-            // 
-            groupBox3.Controls.Add(textBoxResult_KMA);
-            groupBox3.Location = new Point(396, 241);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(188, 115);
-            groupBox3.TabIndex = 4;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Вывод данных";
+            groupBoxResult_KMA.Controls.Add(textBoxResult_KMA);
+            groupBoxResult_KMA.Location = new Point(28, 241);
+            groupBoxResult_KMA.Name = "groupBoxResult_KMA";
+            groupBoxResult_KMA.Size = new Size(556, 115);
+            groupBoxResult_KMA.TabIndex = 4;
+            groupBoxResult_KMA.TabStop = false;
+            groupBoxResult_KMA.Text = "Вывод данных";
+            groupBoxResult_KMA.Enter += groupBoxResult_KMA_Enter;
             // 
             // textBoxResult_KMA
             // 
+            textBoxResult_KMA.Cursor = Cursors.IBeam;
             textBoxResult_KMA.Location = new Point(9, 77);
             textBoxResult_KMA.Name = "textBoxResult_KMA";
             textBoxResult_KMA.ReadOnly = true;
             textBoxResult_KMA.Size = new Size(100, 23);
-            textBoxResult_KMA.TabIndex = 1;
+            textBoxResult_KMA.TabIndex = 2;
             textBoxResult_KMA.TextChanged += textBoxResult_KMA_TextChanged;
             // 
             // ButtomDown_KMA
@@ -133,6 +113,7 @@ namespace Tyuiu.KalininaMA.Sprint6.Task0.V14
             buttonQuestion_KMA.TabIndex = 6;
             buttonQuestion_KMA.Text = "?";
             buttonQuestion_KMA.UseVisualStyleBackColor = true;
+            buttonQuestion_KMA.Click += buttonQuestion_KMA_Click;
             // 
             // FormMain
             // 
@@ -140,8 +121,7 @@ namespace Tyuiu.KalininaMA.Sprint6.Task0.V14
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(605, 450);
             Controls.Add(buttonQuestion_KMA);
-            Controls.Add(groupBox3);
-            Controls.Add(groupBox2);
+            Controls.Add(groupBoxResult_KMA);
             Controls.Add(groupBox1);
             Controls.Add(ButtomDown_KMA);
             Name = "FormMain";
@@ -149,36 +129,17 @@ namespace Tyuiu.KalininaMA.Sprint6.Task0.V14
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
+            groupBoxResult_KMA.ResumeLayout(false);
+            groupBoxResult_KMA.PerformLayout();
             ResumeLayout(false);
         }
 
         private void ButtomDown_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
-        }
-
-        private void ButtomDown_KMA_Click(object sender, EventArgs e)
-        {
             DataService ds = new DataService();
-            try
-            {
-                
-                double x = Convert.ToDouble(textBoxIntX_KMA.Text);
-                double result = ds.Calculate(x);
-                textBoxResult_KMA.Text = result.ToString("F4");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
+            textBoxResult_KMA.Text = Convert.ToString(ds.Calculate(3));
         }
+
 
         private void textBoxIntX_KMA_TextChanged(object sender, EventArgs e)
         {
@@ -188,13 +149,11 @@ namespace Tyuiu.KalininaMA.Sprint6.Task0.V14
         #endregion
 
         private GroupBox groupBox1;
-        private Label label1;
-        private GroupBox groupBox2;
         private PictureBox pictureBox1;
-        private TextBox textBoxIntX_KMA;
-        private GroupBox groupBox3;
+        private GroupBox groupBoxResult_KMA;
         private TextBox textBoxResult_KMA;
         private Button ButtomDown_KMA;
         private Button buttonQuestion_KMA;
+        private Label label1;
     }
 }
