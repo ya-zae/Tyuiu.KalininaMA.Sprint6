@@ -10,17 +10,19 @@ namespace Tyuiu.KalininaMA.Sprint6.Task5.V9
             InitializeComponent();
         }
 
+        DataService ds = new DataService();
+
         string path = @"C:\Users\User\source\repos\Tyuiu.KalininaMA.Sprint6\Tyuiu.KalininaMA.Sprint6.Task5.V9\bin\Debug\InPutDataFileTask5V9.txt";
 
 
         private void buttonDone_KMA_Click(object sender, EventArgs e)
         {
-            textBoxResult_KMA.ColumnCount = 2;
-            textBoxResult_KMA.Columns[0].Width = 20;
-            textBoxResult_KMA.Columns[1].Width = 50;
+            dataGridViewResult_KMA.ColumnCount = 2;
+            dataGridViewResult_KMA.Columns[0].Width = 20;
+            dataGridViewResult_KMA.Columns[1].Width = 50;
 
-            this.chartResult_KMA.ChartAreas[0].AxisX.Title = "Îñü X";
-            this.chartResult_KMA.ChartAreas[0].AxisY.Title = "Îñü Y";
+            this.chartResult_KMA.ChartAreas[0].AxisX.Title = "Int X";
+            this.chartResult_KMA.ChartAreas[0].AxisY.Title = "Int Y";
 
             chartResult_KMA.Series[0].Points.Clear();
             double[] numsMass = new double[ds.len];
@@ -29,8 +31,8 @@ namespace Tyuiu.KalininaMA.Sprint6.Task5.V9
 
             for (int i = 0; i < numsMass.Length; i++)
             {
-                dataGridViewResult_KAA.Rows.Add(Convert.ToString(i), Convert.ToString(numsMass[i]));
-                chartResult_KAA.Series[0].Points.AddXY(i, numsMass[i]);
+                dataGridViewResult_KMA.Rows.Add(Convert.ToString(i), Convert.ToString(numsMass[i]));
+                chartResult_KMA.Series[0].Points.AddXY(i, numsMass[i]);
             }
 
         }
@@ -51,6 +53,11 @@ namespace Tyuiu.KalininaMA.Sprint6.Task5.V9
         private void ButtonHelp_KMA_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Таск 5 выполнила студентка группы РППб-25-1 Калинина Мария Александровна", "Сообщение");
+        }
+
+        private void dataGridViewResult_KMA_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

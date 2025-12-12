@@ -15,18 +15,27 @@ namespace Tyuiu.KalininaMA.Sprint6.Task5.V9.Lib
                 }
             }
             double[] numsArray = new double[len];
-            int index = 0;
+
+
+            int count = 0;
+            double[] result;
             using (StreamReader reader = new StreamReader(path))
             {
+
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    numsArray[index] = Convert.ToDouble(line);
-                    index++;
+                    if (line == "0")
+                    {
+                        count++;
+                    }
+
+
                 }
+                result = new double[count];
+
             }
-            numsArray = numsArray.Where(val => val == 0).ToArray();
-            return numsArray;
+            return result;
         }
     }
 }

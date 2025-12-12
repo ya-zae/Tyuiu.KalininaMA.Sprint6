@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             groupBox1 = new GroupBox();
             textBox1 = new TextBox();
             groupBox2 = new GroupBox();
-            textBoxResult_KMA = new TextBox();
+            dataGridViewResult_KMA = new DataGridView();
             buttonDone_KMA = new Button();
             buttonOpen_KMA = new Button();
             buttonHelp_KMA = new Button();
             chartResult_KMA = new System.Windows.Forms.DataVisualization.Charting.Chart();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewResult_KMA).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chartResult_KMA).BeginInit();
             SuspendLayout();
             // 
@@ -66,7 +67,7 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBoxResult_KMA);
+            groupBox2.Controls.Add(dataGridViewResult_KMA);
             groupBox2.Location = new Point(17, 126);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(187, 312);
@@ -74,16 +75,14 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Вывод данных";
             // 
-            // textBoxResult_KMA
+            // dataGridViewResult_KMA
             // 
-            textBoxResult_KMA.BackColor = SystemColors.ControlDark;
-            textBoxResult_KMA.Location = new Point(9, 29);
-            textBoxResult_KMA.Multiline = true;
-            textBoxResult_KMA.Name = "textBoxResult_KMA";
-            textBoxResult_KMA.ReadOnly = true;
-            textBoxResult_KMA.Size = new Size(172, 277);
-            textBoxResult_KMA.TabIndex = 0;
-            textBoxResult_KMA.TextChanged += textBoxResult_KMA_TextChanged;
+            dataGridViewResult_KMA.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewResult_KMA.Location = new Point(9, 23);
+            dataGridViewResult_KMA.Name = "dataGridViewResult_KMA";
+            dataGridViewResult_KMA.Size = new Size(172, 283);
+            dataGridViewResult_KMA.TabIndex = 5;
+            dataGridViewResult_KMA.CellContentClick += dataGridViewResult_KMA_CellContentClick;
             // 
             // buttonDone_KMA
             // 
@@ -117,16 +116,16 @@
             // 
             // chartResult_KMA
             // 
-            chartArea2.Name = "ChartArea1";
-            chartResult_KMA.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chartResult_KMA.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            chartResult_KMA.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chartResult_KMA.Legends.Add(legend1);
             chartResult_KMA.Location = new Point(210, 132);
             chartResult_KMA.Name = "chartResult_KMA";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            chartResult_KMA.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartResult_KMA.Series.Add(series1);
             chartResult_KMA.Size = new Size(578, 300);
             chartResult_KMA.TabIndex = 5;
             chartResult_KMA.Text = "chart1";
@@ -147,7 +146,7 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewResult_KMA).EndInit();
             ((System.ComponentModel.ISupportInitialize)chartResult_KMA).EndInit();
             ResumeLayout(false);
         }
@@ -157,10 +156,10 @@
         private GroupBox groupBox1;
         private TextBox textBox1;
         private GroupBox groupBox2;
-        private TextBox textBoxResult_KMA;
         private Button buttonDone_KMA;
         private Button buttonOpen_KMA;
         private Button buttonHelp_KMA;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartResult_KMA;
+        private DataGridView dataGridViewResult_KMA;
     }
 }
