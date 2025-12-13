@@ -60,31 +60,31 @@
             // 
             // buttonHelp_KMA
             // 
+            buttonHelp_KMA.Image = (Image)resources.GetObject("buttonHelp_KMA.Image");
             buttonHelp_KMA.Location = new Point(662, 8);
             buttonHelp_KMA.Name = "buttonHelp_KMA";
             buttonHelp_KMA.Size = new Size(84, 57);
             buttonHelp_KMA.TabIndex = 2;
-            buttonHelp_KMA.Text = "button3";
             buttonHelp_KMA.UseVisualStyleBackColor = true;
             buttonHelp_KMA.Click += buttonHelp_KMA_Click;
             // 
             // buttonDone_KMA
             // 
+            buttonDone_KMA.Image = (Image)resources.GetObject("buttonDone_KMA.Image");
             buttonDone_KMA.Location = new Point(115, 8);
             buttonDone_KMA.Name = "buttonDone_KMA";
             buttonDone_KMA.Size = new Size(82, 57);
             buttonDone_KMA.TabIndex = 1;
-            buttonDone_KMA.Text = "button2";
             buttonDone_KMA.UseVisualStyleBackColor = true;
             buttonDone_KMA.Click += buttonDone_KMA_Click;
             // 
             // buttonOpen_KMA
             // 
+            buttonOpen_KMA.Image = (Image)resources.GetObject("buttonOpen_KMA.Image");
             buttonOpen_KMA.Location = new Point(14, 8);
             buttonOpen_KMA.Name = "buttonOpen_KMA";
             buttonOpen_KMA.Size = new Size(82, 57);
             buttonOpen_KMA.TabIndex = 0;
-            buttonOpen_KMA.Text = "button1";
             buttonOpen_KMA.UseVisualStyleBackColor = true;
             buttonOpen_KMA.Click += buttonOpen_KMA_Click;
             // 
