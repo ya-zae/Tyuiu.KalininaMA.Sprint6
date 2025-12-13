@@ -170,6 +170,7 @@
             Controls.Add(panel1);
             Name = "FormMain";
             Text = "Form1";
+            Load += FormMain_Load;
             panel1.ResumeLayout(false);
             Task_KMA.ResumeLayout(false);
             Task_KMA.PerformLayout();

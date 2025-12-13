@@ -87,5 +87,10 @@ namespace Tyuiu.KalininaMA.Sprint6.Task7.V11
             }
             buttonSave.Enabled = true;
         }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

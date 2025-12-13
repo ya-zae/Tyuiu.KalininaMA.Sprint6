@@ -21,7 +21,8 @@ namespace Tyuiu.KalininaMA.Sprint6.Task7.V11.Lib
                 }
             }
 
-            int xRow = 4; // 5-я строка (индекс 4)
+
+            int xRow = 4;
             for (int j = 0; j < columns; j++)
             {
                 if (matrix[xRow, j] < 0)
@@ -30,6 +31,7 @@ namespace Tyuiu.KalininaMA.Sprint6.Task7.V11.Lib
                 }
             }
             return matrix;
+
         }
     }
 }
